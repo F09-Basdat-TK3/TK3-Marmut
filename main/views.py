@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
 def show_main(request):
-    return render(request, "login.html", {})
+    return render(request, "register-label.html", {})

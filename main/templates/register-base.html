@@ -15,18 +15,22 @@
       <img class="wallpaper" alt="" src="{% static 'images/Auth-Wallpaper.png' %}" />
       <div class="form-container">
         <div class="form-content">
-            <h1 class="tittle">Masuk</h1>
+          <h1 class="tittle">Daftar</h1>
             <form method="POST" action="">
               {% csrf_token %}
               <div class="input-container">
-                <img class="email-icon" alt="" src="{% static 'images/Email.png' %}">
-                <input class="input-field" type="text" placeholder="Alamat Surat Elektronik" name="email">
+                <img class="icon" alt="" src="{% static 'images/Email.png' %}">
+                <input class="input-field" type="text" placeholder="Nama Pengguna" name="email">
               </div>
               <div class="input-container">
-                <img class="key-icon" alt="" src="{% static 'images/Key.png' %}">
+                <img class="icon" alt="" src="{% static 'images/Key.png' %}">
                 <input class="input-field" type="password" placeholder="Kata Sandi" name="password">
               </div>
-              <input class="button" type="submit" value="Masuk">
+              <div class="input-container">
+                <img class="icon" alt="" src="{% static 'images/Key.png' %}">
+                <input class="input-field" type="password" placeholder="Konformasi Kata Sandi" name="password2">
+              </div>
+              <input class="button" type="submit" value="Buat Akun">
             </form>
         </div>
       </div>
