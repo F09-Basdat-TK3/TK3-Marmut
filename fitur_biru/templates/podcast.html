@@ -1,64 +1,78 @@
-<!DOCTYPE html>
-{% load static %}
+<!DOCTYPE html> {% load static %}
 <link rel="stylesheet" href="{% static 'css/podcast.css'%}">
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width"/>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&display=swap"
-    />
-  </head>
-  <body>
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&display=swap" />
+</head>
+
+<body>
     <div class="desktop-1">
-      <img class="bgr" alt="" src="{% static 'images/Background.jpg'%}"/>
-      <div class="header">
-        <div class="header-container">
-          <h1 class="tittle">Detail Podcast</h1>
-          <h3 class="name">Judul: Malam Jumat</h3>
-          <table class="podcast-table">
-            <tr>
-              <td><b class="info">Genre: Misteri, Horor, Percintaan</b></td>
-              <td><b class="info">Tanggal Rilis: 11/01/2024</b></td>
-              <td><b class="info">Tahun: 2024</b></td>
-            </tr>
-            <tr>
-              <td><b class="info">Podcaster: Ewing 4K</b></td>
-              <td><b class="info">Total Durasi: 17 jam 21 menit</b></td>
-            </tr>
-          </table>
+        <img class="bgr" alt="" src="{% static 'images/Background.jpg'%}" />
+        <div class="header">
+            <div class="header-container">
+                <h1 class="tittle">Detail Podcast</h1>
+                <h3 class="name">Judul: Malam Jumat</h3>
+                <table class="podcast-table">
+                    <tr>
+                        <td><b class="info">Genre: Misteri, Horor, Percintaan</b></td>
+                        <td><b class="info">Tanggal Rilis: 11/01/2024</b></td>
+                        <td><b class="info">Tahun: 2024</b></td>
+                    </tr>
+                    <tr>
+                        <td><b class="info">Podcaster: Ewing 4K</b></td>
+                        <td><b class="info">Total Durasi: 17 jam 21 menit</b></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="navbar">
+                <div class="navbtn-cont">
+                    <button class="navbtn">Chart</button>
+                    <span class="separator">|</span>
+                    <button class="navbtn">Kelola Playlist</button>
+                    <span class="separator">|</span>
+                    <button class="navbtn">Berlangganan</button>
+                    <span class="separator">|</span>
+                    <button class="navbtn">Kelola Podcast</button>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="cari">
+                    <button>Cari</button>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="content">
-        <h2 class="eps">Daftar Episode</h2>
-        <table class="content-table">
-          <tr>
-              <th class="content-header-l">Episode</th>
-              <th class="content-header">Deskripsi</th>
-              <th class="content-header">Durasi</th>
-              <th class="content-header-r">Tanggal</th>
-          </tr>
-          <tr>
-              <td class="tuple-l">Tante Puspa Kesepian</td>
-              <td class="tuple">Seorang wanita yang ditinggal mati suaminya.</td>
-              <td class="tuple" id="durasi">1 jam 2 menit</td>
-              <td class="tuple-r" id="tuple-tanggal">25/04/2024</td>
-          </tr>
-          <tr>
-              <td class="tuple-l">Pocong Penjilat Foto Nahida</td>
-              <td class="tuple">Urband legend Desa Vimara.</td>
-              <td class="tuple" id="durasi">57 menit</td>
-              <td class="tuple-r" id="tuple-tanggal">18/04/2024</td>
-          </tr>
-          <tr>
-              <td class="tuple-l">Penampakah Wajah Hitam</td>
-              <td class="tuple">Aih, muka gua.</td>
-              <td class="tuple" id="durasi">1 menit</td>
-              <td class="tuple-r" id="tuple-tanggal">11/04/2024</td>
-          </tr>
-        </table>
-      </div>
+        <div class="content">
+            <h2 class="eps">Daftar Episode</h2>
+            <table class="content-table">
+                <tr>
+                    <th class="content-header-l">Episode</th>
+                    <th class="content-header">Deskripsi</th>
+                    <th class="content-header">Durasi</th>
+                    <th class="content-header-r">Tanggal</th>
+                </tr>
+                <tr>
+                    <td class="tuple-l">Tante Puspa Kesepian</td>
+                    <td class="tuple">Seorang wanita yang ditinggal mati suaminya.</td>
+                    <td class="tuple" id="durasi">1 jam 2 menit</td>
+                    <td class="tuple-r" id="tuple-tanggal">25/04/2024</td>
+                </tr>
+                <tr>
+                    <td class="tuple-l">Pocong Penjilat Foto Nahida</td>
+                    <td class="tuple">Urband legend Desa Vimara.</td>
+                    <td class="tuple" id="durasi">57 menit</td>
+                    <td class="tuple-r" id="tuple-tanggal">18/04/2024</td>
+                </tr>
+                <tr>
+                    <td class="tuple-l">Penampakah Wajah Hitam</td>
+                    <td class="tuple">Aih, muka gua.</td>
+                    <td class="tuple" id="durasi">1 menit</td>
+                    <td class="tuple-r" id="tuple-tanggal">11/04/2024</td>
+                </tr>
+            </table>
+        </div>
     </div>
-  </body>
+</body>
+
 </html>

@@ -1,70 +1,84 @@
-<!DOCTYPE html>
-{% load static %}
+<!DOCTYPE html> {% load static %}
 <link rel="stylesheet" href="{% static 'css/podcast-list.css'%}">
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width"/>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&display=swap"
-    />
-  </head>
-  <body>
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&display=swap" />
+</head>
+
+<body>
     <div class="desktop-1">
-      <img class="bgr" alt="" src="{% static 'images/Background.jpg'%}"/>
-      <div class="header">
-        <div class="header-container">
-          <h1 class="tittle">Podcast</h1>
+        <img class="bgr" alt="" src="{% static 'images/Background.jpg'%}" />
+        <div class="header">
+            <div class="header-container">
+                <h1 class="tittle">Podcast</h1>
+            </div>
+            <div class="navbar">
+                <div class="navbtn-cont">
+                    <button class="navbtn">Chart</button>
+                    <span class="separator">|</span>
+                    <button class="navbtn">Kelola Playlist</button>
+                    <span class="separator">|</span>
+                    <button class="navbtn">Berlangganan</button>
+                    <span class="separator">|</span>
+                    <button class="navbtn">Kelola Podcast</button>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="cari">
+                    <button>Cari</button>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="content">
-        <h2 class="eps">Daftar Podcast</h2>
-        <table class="content-table">
-          <tr>
-              <th class="content-header-l">Judul</th>
-              <th class="content-header">Jumlah Episode</th>
-              <th class="content-header">Total Durasi</th>
-              <th class="content-header-r">Aksi</th>
-          </tr>
-          <tr>
-              <td class="tuple-l">Malam Jumat</td>
-              <td class="tuple">14</td>
-              <td class="tuple">1 jam 2 menit</td>
-              <td class="tuple-r">
-                <div class="btn-col">
-                  <button class="btn">Lihat</button>
-                  <button class="btn">Tambah Episode</button>
-                  <button class="btn">Hapus</button>
-                </div>
-              </td>
-          </tr>
-          <tr>
-              <td class="tuple-l">Legenda Epic Abadi</td>
-              <td class="tuple">3</td>
-              <td class="tuple">57 menit</td>
-              <td class="tuple-r">
-                <div class="btn-col">
-                  <button class="btn">Lihat</button>
-                  <button class="btn">Tambah Episode</button>
-                  <button class="btn">Hapus</button>
-                </div>
-              </td>
-          </tr>
-          <tr>
-              <td class="tuple-l">Permicinan</td>
-              <td class="tuple">7</td>
-              <td class="tuple">1 jam 52 menit</td>
-              <td class="tuple-r">
-                <div class="btn-col">
-                  <button class="btn">Lihat</button>
-                  <button class="btn">Tambah Episode</button>
-                  <button class="btn">Hapus</button>
-                </div>
-              </td>
-          </tr>
-        </table>
-      </div>
+        <div class="content">
+            <h2 class="eps">Daftar Podcast</h2>
+            <table class="content-table">
+                <tr>
+                    <th class="content-header-l">Judul</th>
+                    <th class="content-header">Jumlah Episode</th>
+                    <th class="content-header">Total Durasi</th>
+                    <th class="content-header-r">Aksi</th>
+                </tr>
+                <tr>
+                    <td class="tuple-l">Malam Jumat</td>
+                    <td class="tuple">14</td>
+                    <td class="tuple">1 jam 2 menit</td>
+                    <td class="tuple-r">
+                        <div class="btn-col">
+                            <button class="btn">Lihat</button>
+                            <button class="btn">Tambah Episode</button>
+                            <button class="btn">Hapus</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tuple-l">Legenda Epic Abadi</td>
+                    <td class="tuple">3</td>
+                    <td class="tuple">57 menit</td>
+                    <td class="tuple-r">
+                        <div class="btn-col">
+                            <button class="btn">Lihat</button>
+                            <button class="btn">Tambah Episode</button>
+                            <button class="btn">Hapus</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tuple-l">Permicinan</td>
+                    <td class="tuple">7</td>
+                    <td class="tuple">1 jam 52 menit</td>
+                    <td class="tuple-r">
+                        <div class="btn-col">
+                            <button class="btn">Lihat</button>
+                            <button class="btn">Tambah Episode</button>
+                            <button class="btn">Hapus</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
-  </body>
+</body>
+
 </html>
