@@ -1,0 +1,38 @@
+<form action="/create-lagu" method="post">
+    <label for="album">Album:</label>
+    <select id="album" name="album">
+      <!-- dropdown daftar album yang terdaftar pada Marmut -->
+      <option value="Album1">Album1</option>
+      <option value="Album2">Album2</option>
+      <!-- ... -->
+    </select><br><br>
+    <label for="judul">Judul:</label>
+    <input type="text" id="judul" name="judul"><br><br>
+    <label for="artist">Artist:</label>
+    <!-- Jika USER LOGGED IN == Artist, maka lagu dinyanyikan oleh Artist ini. Jika USER LOGGED IN == Songwriter, tampilkan dropdown daftar artist pada Marmut -->
+    <select id="artist" name="artist">
+      <!-- dropdown daftar artist pada Marmut -->
+      <option value="ArtistA">ArtistA</option>
+      <option value="ArtistB">ArtistB</option>
+      <!-- ... -->
+    </select><br><br>
+    <label for="songwriter">Songwriter:</label>
+    <!-- Multiselect daftar songwriter pada Marmut. Jika USER LOGGED IN == Songwriter, maka lagu termasuk ditulis oleh Songwriter ini -->
+    <select id="songwriter" multiple name="songwriter">
+      <!-- dropdown daftar songwriter pada Marmut -->
+      <option value="SongwriterA">SongwriterA</option>
+      <option value="SongwriterB">SongwriterB</option>
+      <!-- ... -->
+    </select><br><br>
+    <label for="genre">Genre:</label>
+    <!-- Multiselect daftar genre pada Marmut -->
+    <select id="genre" multiple name="genre">
+      <!-- dropdown daftar genre pada Marmut -->
+      <option value="GenreA">GenreA</option>
+      <option value="GenreB">GenreB</option>
+      <!-- ... -->
+    </select><br><br>
+    <label for="durasi">Durasi:</label>
+    <input type="text" id="durasi" name="durasi"><br><br>
+    <input type="submit" value="SUBMIT">
+  </form>
