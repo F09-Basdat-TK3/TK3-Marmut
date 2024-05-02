@@ -18,6 +18,9 @@ def show_tambah_lagu(request):
 def show_detail_song(request):
     return render(request, "detail_song.html", {})
 
+def show_play_song(request):
+    return render(request, "play_song.html", {})
+
 def show_tambah_lagu_ke_playlist(request):
     return render(request, "tambah_lagu_ke_playlist.html", {})
 
