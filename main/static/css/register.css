@@ -1,74 +1,75 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
+
 .wallpaper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
+
 .form-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 15px;
-  background-color: #d9d9d93b;
-  width: 617px;
-  height: 400px;
-  mix-blend-mode: lighten;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    background-color: #d9d9d93b;
+    width: 617px;
+    height: 400px;
+    mix-blend-mode: lighten;
 }
+
 .form-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
+
 .logo {
-  position: absolute;
-  top: 839px;
-  left: 66px;
-  width: 200px;
-  height: 202px;
-  object-fit: cover;
+    position: absolute;
+    width: 200px;
+    height: 202px;
+    object-fit: cover;
+    bottom: 0;
+    left: 0;
 }
+
 .tittle {
-  display: flex;
-  color: #f4f4f7;
-  align-items: center;
-  justify-content: center;
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  margin-bottom: 50px;
-  font-size: 50px;
+    display: flex;
+    color: #f4f4f7;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 50px;
+    font-size: 50px;
 }
+
 .button {
-  font-size: 25px;
-  color: #554264;
-  mix-blend-mode: normal;
-  border-radius: 15px;
-  width: 150px;
-  height: 50px;
-  background-color: #f4f4f7b4;
+    font-size: 25px;
+    color: #554264;
+    mix-blend-mode: normal;
+    border-radius: 15px;
+    width: 150px;
+    height: 50px;
+    background-color: #f4f4f7b4;
 }
+
 .desktop-1 {
-  width: 100%;
-  position: relative;
-  background-color: #fff;
-  height: 1080px;
-  overflow: hidden;
-  text-align: center;
-  font-size: var(--font-size-3xl);
-  color: var(--color-gray);
-  font-family: var(--font-phetsarath);
+    display: flex;
+    flex-direction: column;
 }
