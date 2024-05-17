@@ -30,7 +30,7 @@ def get_podcast_by_id(request, id_konten):
     return render(request, "podcast.html", context)
 
 def get_episodes(id_konten):
-    eps = query("SELECT * FROM episode WHERE id_konten_podcast = '{id_konten}'")
+    eps = query(f"SELECT * FROM episode WHERE id_konten_podcast = '{id_konten}'")
     return eps
 
 def create_podcast(request):
