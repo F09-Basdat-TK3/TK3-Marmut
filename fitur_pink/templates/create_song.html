@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Song - Marmut Platform</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>CREATE LAGU</h2>
+        <form>
+            <div class="form-group">
+                <label for="albumSelection">Album:</label>
+                <select id="albumSelection" name="albumSelection" class="form-control">
+                    <option value="album1">Album1</option>
+                    <option value="album2">Album2</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="songTitle">Judul:</label>
+                <input type="text" id="songTitle" name="songTitle" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="artistSelection">Artist:</label>
+                <select id="artistSelection" name="artistSelection" class="form-control">
+                    <option value="artist1">Artist1</option>
+                    <option value="artist2">Artist2</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="songwriterSelection">Songwriter:</label>
+                <select id="songwriterSelection" name="songwriterSelection" class="form-control" multiple>
+                    <option value="songwriter1">Songwriter1</option>
+                    <option value="songwriter2">Songwriter2</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="genreSelection">Genre:</label>
+                <select id="genreSelection" name="genreSelection" class="form-control" multiple>
+                    <option value="genre1">Genre1</option>
+                    <option value="genre2">Genre2</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="duration">Durasi:</label>
+                <input type="text" id="duration" name="duration" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">SUBMIT</button>
+        </form>
+    </div>
+</body>
+</html>
