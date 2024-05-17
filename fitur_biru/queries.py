@@ -4,7 +4,7 @@ from psycopg2 import Error
 from psycopg2.extras import RealDictCursor
 
 try:
-    connection = psycopg2.connect(user="MaulanaSeto",
+    connection = psycopg2.connect(user="postgres.lhfifpaqxnenmukvufkz",
                                   password="IcikiwirBalap69",
                                   host="aws-0-ap-southeast-1.pooler.supabase.com",
                                   port="5432",
