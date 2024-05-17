@@ -1,0 +1,99 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/register-user.css'%}">
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Phetsarath:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="desktop-1">
+      <img class="wallpaper" alt="" src="{% static 'images/Auth-Wallpaper.png' %}" />
+      <div class="form-container">
+        <div class="form-content">
+          <h1 class="tittle">Daftar Pengguna</h1>
+            <form method="POST" action="">
+              {% csrf_token %}
+              <table>
+                <tr>
+                  <td class="col1">
+                    <h3>Alamat Surel:</h3>
+                    <div class="input-container">
+                      <input class="input-field" type="text" placeholder="Alamat Surat Elektronik" name="email">
+                    </div>
+                  </td>
+                  <td class="col2">
+                    <h3>Jenis Kelamin:</h3>
+                    <div class="input-container">
+                      <select class="input-field" name="gender">
+                        <option value="L">Laki-laki</option>
+                        <option value="P">Perempuan</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col1">
+                    <h3>Kata Sandi:</h3>
+                    <div class="input-container">
+                      <input class="input-field" type="password" placeholder="Kata Sandi" name="password1">
+                    </div>
+                  </td>
+                  <td class="col2">
+                    <h3>Tempat Lahir:</h3>
+                    <div class="input-container">
+                      <input class="input-field" type="text" placeholder="Tempat Lahir" name="birth-place">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col1">
+                    <h3>Konfirmasi Kata Sandi: </h3>
+                    <div class="input-container">
+                      <input class="input-field" type="password" placeholder="Konfirmasi Kata Sandi" name="password2">
+                    </div>
+                  </td>
+                  <td class="col2">
+                    <h3>Tanggal Lahir:</h3>
+                    <div class="input-container">
+                      <input class="input-field" type="date" name="birth-date">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col1">
+                    <h3>Nama:</h3>
+                    <div class="input-container">
+                      <input class="input-field" type="text" placeholder="Nama" name="name">
+                    </div>  
+                  </td>
+                  <td class="col2">
+                    <h3>Kota Asal:</h3>
+                    <div class="input-container">
+                      <input class="input-field" type="text" placeholder="Kota Asal" name="birth-place">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col1">
+                    <h3>Peran:</h3>
+                    <div class="input-container">
+                      <input type="checkbox" name="role" value="1">Podcaster<br>
+                      <input type="checkbox" name="role" value="2">Artis<br>
+                      <input type="checkbox" name="role" value="3">Songwriter<br>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <input class="button" type="submit" value="Buat Akun">
+            </form>
+        </div>
+      </div>
+      <img class="logo" alt="" src="{% static 'images/Logo.png' %}">
+    </div>
+  </body>
+</html>
