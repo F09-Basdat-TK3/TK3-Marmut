@@ -1,0 +1,38 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/create-podcast.css'%}">
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Phetsarath:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="desktop-1">
+      <img class="wallpaper" alt="" src="{% static 'images/Background.jpg' %}">
+      <div class="form-container">
+        <div class="form-content">
+          <h1 class="tittle">Buat Episode</h1>
+            <form method="POST" action="">
+              {% csrf_token %}
+              <h3>Judul:</h3>
+              <div class="input-container">
+                <input class="input-field" type="text" placeholder="Judul" name="title">
+              </div>
+              <h3>Deskripsi:</h3>
+              <div class="input-container">
+                <input class="input-field" type="text" placeholder="Deskripsi" name="description">
+              </div>
+              <h3>Durasi:</h3>
+              <div class="input-container">
+                <input class="input-field" type="text" placeholder="Durasi" name="duration">
+              </div>
+              <input class="button" type="submit" value="Buat">
+            </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,161 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.header {
+    background-color: rgba(12, 12, 13, 0.54);
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-container {
+    display: inline-block;
+}
+
+.content {
+    height: 100%;
+    flex: 1;
+}
+
+.tittle {
+    text-align: center;
+    margin: 10px;
+}
+
+.name {
+    text-align: center;
+    margin: 10px;
+}
+
+.info {
+    padding: 50px;
+}
+
+.eps {
+    text-align: center;
+    margin: 20px;
+}
+
+.content-table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.desktop-1 {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tittle,
+.name,
+.eps,
+.content-header,
+.content-header-l,
+.content-header-r {
+    color: #f4f4f7;
+}
+
+.content-header,
+.tuple {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.content-header-l,
+.tuple-l {
+    padding-right: 50px;
+}
+
+.content-header-r,
+.tuple-r {
+    padding-left: 50px;
+}
+
+.info,
+.tuple,
+.tuple-l,
+.tuple-r {
+    color: #f4f4f7b6;
+}
+
+.tuple-l,
+.tuple,
+.tuple-r,
+.content-header-l,
+.content-header,
+.content-header-r {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.bgr {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.header,
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+.content-table {
+    background-color: #08070e70;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.content-header-l,
+.content-header,
+.content-header-r,
+.tuple-l,
+.tuple,
+.tuple-r {
+    text-align: center;
+}
+
+.play {
+    background: none;
+    color: #f4f4f7b6;
+    border-radius: 10px;
+    border-color: #f4f4f7b6;
+    border-width: 1px;
+}
+
+.navbar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbtn {
+    background: none;
+    color: #f4f4f7b6;
+    size: 15%;
+    cursor: pointer;
+    outline: inherit;
+    border: none;
+}
+
+.navbtn:hover {
+    background-color: #f4f4f725;
+}
+
+.navbtn:active {
+    background-color: #f4f4f762;
+}
+
+.separator {
+    color: #f4f4f7b6
+}
