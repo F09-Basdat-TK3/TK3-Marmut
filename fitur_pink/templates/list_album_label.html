@@ -7,19 +7,18 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container mt-5">
-        <h2>LIST ALBUM</h2>
+    <div class="container">
+        <h2 class="mt-4">LIST ALBUM</h2>
         <table class="table">
-            <thead>
+            <thead class="thead-dark">
                 <tr>
-                    <th>Judul</th>
-                    <th>Jumlah Lagu</th>
-                    <th>Total Durasi</th>
-                    <th>Action</th>
+                    <th scope="col">Judul</th>
+                    <th scope="col">Jumlah Lagu</th>
+                    <th scope="col">Total Durasi</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
-                
                 <tr>
                     <td>Album1</td>
                     <td>0</td>
@@ -29,7 +28,15 @@
                         <button class="btn btn-danger">Hapus</button>
                     </td>
                 </tr>
-                
+                <tr>
+                    <td>Album2</td>
+                    <td>2</td>
+                    <td>4 menit</td>
+                    <td>
+                        <button class="btn btn-primary">Lihat Daftar Lagu</button>
+                        <button class="btn btn-danger">Hapus</button>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>

@@ -1,12 +1,30 @@
-<form action="/create-album" method="post">
-    <label for="judul">Judul:</label>
-    <input type="text" id="judul" name="judul"><br><br>
-    <label for="label">Label:</label>
-    <select id="label" name="label">
-      <!-- dropdown daftar label yang terdaftar pada Marmut -->
-      <option value="LabelA">LabelA</option>
-      <option value="LabelB">LabelB</option>
-      <!-- ... -->
-    </select><br><br>
-    <input type="submit" value="SUBMIT">
-  </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Album - Marmut Platform</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>CREATE ALBUM</h2>
+        <form>
+            <div class="form-group">
+                <label for="albumTitle">Judul:</label>
+                <input type="text" class="form-control" id="albumTitle" name="albumTitle">
+            </div>
+            <div class="form-group">
+                <label for="labelDropdown">Label:</label>
+                <select class="form-control" id="labelDropdown" name="labelDropdown">
+                    
+                    <option value="label1">Label1</option>
+                    <option value="label2">Label2</option>
+                    
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">SUBMIT</button>
+        </form>
+    </div>
+</body>
+</html>
