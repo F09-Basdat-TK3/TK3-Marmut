@@ -1,0 +1,66 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/register-label.css'%}">
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Phetsarath:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="desktop-1">
+      <img class="wallpaper" alt="" src="{% static 'images/Auth-Wallpaper.png' %}" />
+      <div class="form-container">
+        <div class="form-content">
+          <h1 class="tittle">Daftar Label</h1>
+            <form method="POST" action="">
+              {% csrf_token %}
+              <table>
+                <tr>
+                  <td class="col1">
+                    <h3>Alamat Surel:</h3>
+                    <div class="input-container">
+                      <input class="input-field" type="text" placeholder="Alamat Surat Elektronik" name="email">
+                    </div>
+                  </td>
+                  <td class="col2">
+                    <h3>Nama:</h3>
+                    <div class="input-container">
+                      <input class="input-field" type="text" placeholder="Nama" name="name">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col1">
+                    <h3>Kata Sandi:</h3>
+                    <div class="input-container">
+                      <input class="input-field" type="password" placeholder="Kata Sandi" name="password1">
+                    </div>
+                  </td>
+                  <td class="col2">
+                    <h3>Kontak:</h3>
+                    <div class="input-container">
+                      <input class="input-field" type="text" placeholder="Kontak" name="contact">
+                    </div>  
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col1">
+                    <h3>Konfirmasi Kata Sandi: </h3>
+                    <div class="input-container">
+                      <input class="input-field" type="password" placeholder="Konfirmasi Kata Sandi" name="password2">
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <input class="button" type="submit" value="Buat Akun">
+            </form>
+        </div>
+      </div>
+      <img class="logo" alt="" src="{% static 'images/Logo.png' %}">
+    </div>
+  </body>
+</html>
