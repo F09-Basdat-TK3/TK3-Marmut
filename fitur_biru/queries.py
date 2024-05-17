@@ -9,8 +9,6 @@ try:
                                   host="aws-0-ap-southeast-1.pooler.supabase.com",
                                   port="5432",
                                   database="postgres")
-
-    # Create a cursor to perform database operations
     connection.autocommit = True
     cursor = connection.cursor()
 except (Exception, Error) as error:
@@ -41,7 +39,6 @@ def connectdb(func):
     def wrapper(request):
         res = ""
         with connection.cursor() as cursor:
-            # cursor.execute("SET search_path to PACILFLIX;")
             res = func(cursor, request)
         return res
     return wrapper
