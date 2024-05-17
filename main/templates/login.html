@@ -1,0 +1,36 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css'%}">
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Phetsarath:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="desktop-1">
+      <img class="wallpaper" alt="" src="{% static 'images/Auth-Wallpaper.png' %}" />
+      <div class="form-container">
+        <div class="form-content">
+            <h1 class="tittle">Masuk</h1>
+            <form method="POST" action="">
+              {% csrf_token %}
+              <div class="input-container">
+                <img class="email-icon" alt="" src="{% static 'images/Email.png' %}">
+                <input class="input-field" type="text" placeholder="Alamat Surat Elektronik" name="email">
+              </div>
+              <div class="input-container">
+                <img class="key-icon" alt="" src="{% static 'images/Key.png' %}">
+                <input class="input-field" type="password" placeholder="Kata Sandi" name="password">
+              </div>
+              <input class="button" type="submit" value="Masuk">
+            </form>
+        </div>
+      </div>
+      <img class="logo" alt="" src="{% static 'images/Logo.png' %}">
+    </div>
+  </body>
+</html>
