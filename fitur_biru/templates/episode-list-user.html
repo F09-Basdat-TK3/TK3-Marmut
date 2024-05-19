@@ -14,7 +14,7 @@
         <div class="header">
             <div class="header-container">
                 <h1 class="tittle">Podcast</h1>
-                <h3 class="name">Malam Jumat</h3>
+                <h3 class="name">{{pod_title}}</h3>
             </div>
             <div class="navbar">
                 <div class="navbtn-cont">
@@ -42,41 +42,15 @@
                     <th class="content-header">Tanggal</th>
                     <th class="content-header-r">Aksi</th>
                 </tr>
+                {% for e in eps %}
                 <tr>
-                    <td class="tuple-l">Pocong Gundul</td>
-                    <td class="tuple">etgfrwetg5rety45ey5ya</td>
-                    <td class="tuple">1 jam 13 menit</td>
-                    <td class="tuple">69/69/6969</td>
-                    <td class="tuple-r"><button class="play">Hapus</button></td>
+                    <td class="tuple-l">{{e.judul}}</td>
+                    <td class="tuple">{{e.deskripsi}}</td>
+                    <td class="tuple">{{e.durasi}}</td>
+                    <td class="tuple">{{e.tanggal_rilis}}</td>
+                    <td class="tuple-r"><button class="play">Mainkan</button></td>
                 </tr>
-                <tr>
-                    <td class="tuple-l">Janda Penasaran</td>
-                    <td class="tuple">erhjweikla3or3409r</td>
-                    <td class="tuple">1 jam 13 menit</td>
-                    <td class="tuple">69/69/6969</td>
-                    <td class="tuple-r"><button class="play">Hapus</button></td>
-                </tr>
-                <tr>
-                    <td class="tuple-l">Arwah Nino</td>
-                    <td class="tuple">-w04ri2340irt04923uit60935 mt0634</td>
-                    <td class="tuple">1 jam 13 menit</td>
-                    <td class="tuple">69/69/6969</td>
-                    <td class="tuple-r"><button class="play">Hapus</button></td>
-                </tr>
-                <tr>
-                    <td class="tuple-l">Yasinan Dulu, ya Ges!</td>
-                    <td class="tuple">tgf4rwiutg09423v9tqu mu</td>
-                    <td class="tuple">1 jam 13 menit</td>
-                    <td class="tuple">69/69/6969</td>
-                    <td class="tuple-r"><button class="play">Hapus</button></td>
-                </tr>
-                <tr>
-                    <td class="tuple-l">...</td>
-                    <td class="tuple">...</td>
-                    <td class="tuple">...</td>
-                    <td class="tuple">...</td>
-                    <td class="tuple-r">...</td>
-                </tr>
+                {% endfor %}
             </table>
         </div>
     </div>

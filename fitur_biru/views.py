@@ -19,25 +19,25 @@ def show_podcasters(request):
 
 def show_podcasts(request, podcaster_email):
     pods = query(f"""
-                  SELECT K.judul, K.durasi, COUNT(E.id_episode) AS jumlah_episode
+                  SELECT K.judul, K.durasi, P.id_konten, COUNT(E.id_episode) AS jumlah_episode
                   FROM KONTEN K
                   JOIN PODCAST P ON K.id = P.id_konten
                   JOIN EPISODE E ON P.id_konten = E.id_konten_podcast
                   WHERE P.email_podcaster = '{podcaster_email}'
-                  GROUP BY K.judul, K.durasi
+                  GROUP BY K.judul, K.durasi, P.id_konten
                   """)
     context = {'podcasts': pods}
-    return render(request, "podcast-list-user.html", {context})
+    return render(request, "podcast-list-podcaster.html", context)
 
 def show_episodes(request, id_konten):
-    pod_tittle = query(f"""
-                        SELECT K.judul FROM KONTEN K
-                        JOIN PODCAST P ON K.id = P.id_konten
-                        WHERE P.id_konten = '{id_konten}'
-                        """)
+    pod_title = query(f"""
+                       SELECT K.judul FROM KONTEN K
+                       JOIN PODCAST P ON K.id = P.id_konten
+                       WHERE P.id_konten = '{id_konten}'
+                       """)
     eps = query(f"SELECT * FROM EPISODE WHERE id_konten_podcast = '{id_konten}'")
-    context = {'pod-tittle': pod_tittle, 'eps': eps}
-    return render(request, "podcast.html", context)
+    context = {'pod_title': pod_title[0]["judul"], 'eps': eps}
+    return render(request, "episode-list-user.html", context)
 
 def create_podcast(request):
     if request.method == 'POST':
@@ -52,6 +52,10 @@ def delete_podcast(request):
         id_konten = request.POST.get("id_konten")
         query(f"DELETE FROM PODCAST WHERE id_konten = '{id_konten}'")
     else: return render(request, "podcast-list.html")
+
+def add_episode(request, id_konten):
+    context = {'id_konten': id_konten}
+    return render(request, "create-episode.html", context)
 
 def create_episode(request):
     if request.method == 'POST':
