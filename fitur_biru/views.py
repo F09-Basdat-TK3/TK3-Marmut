@@ -12,7 +12,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 import uuid
 
-def show_podcaster(request):
+def show_podcasters(request):
     podster = query("SELECT A.nama, A.email FROM AKUN A JOIN PODCASTER PR ON A.email = PR.email")
     context = {'podcasters': podster}
     return render(request, "podcaster-list.html", context)
