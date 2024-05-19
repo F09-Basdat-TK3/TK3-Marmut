@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Playlist Detail</title>
+    <link rel = "stylesheet"
+    href = "https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One">
+    <link rel = "stylesheet"
+    href = "https://fonts.googleapis.com/css2?family=Darumadrop+One">
+
+    <style>
+        body {
+            font-family: 'Mochiy Pop P One';
+            color: #724E2B;
+            margin: 0;
+            padding: 0;
+            background-color: #edb047;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 20px;
+            border: 6px solid #724E2B;
+            background: #FEFADD;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-family: 'Darumadrop One';
+            color: #724E2B;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .details {
+            text-align: left; 
+            width: 100%; 
+            margin-bottom: 20px; 
+        }
+        p {
+            color: #724E2B;
+            font-size: 18px;
+            margin: 0; 
+        }
+        .btn {
+            border-radius: 10px;
+            border: 4px solid #724E2B;
+            padding: 5px;
+            color: #724E2B;
+            background: #FEFADD;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            color: #FEFADD;
+            background: #724E2B;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 4px solid #724E2B;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #d8b46b;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Playlist Detail</h1>
+        <div class="details">
+            <p>Judul: Miau</p>
+            <p>Pembuat: Mimi</p>
+            <p>Jumlah Lagu: 5</p>
+            <p>Total Durasi: 5 menit</p>
+            <p>Tanggal Dibuat: 18/03/24</p>
+            <p>Deskripsi: Aku suka kucing</p>
+        </div>
+        <a href="#" class="btn">Shuffle Play</a>
+        <a href="#" class="btn">Kembali</a>
+        
+        <h2>DAFTAR LAGU</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Judul Lagu</th>
+                    <th>Oleh</th>
+                    <th>Durasi</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Wahahoo!</td>
+                    <td>Nyam</td>
+                    <td>2 menit</td>
+                    <td>
+                        <a href="#">Lihat</a> |
+                        <a href="#">Play</a> |
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dubidubidu</td>
+                    <td>Bingus</td>
+                    <td>3 menit</td>
+                    <td>
+                        <a href="#">Lihat</a> |
+                        <a href="#">Play</a> |
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="tambah_lagu.html" class="btn">Tambah Lagu</a>
+    </div>
+</body>
+</html>
