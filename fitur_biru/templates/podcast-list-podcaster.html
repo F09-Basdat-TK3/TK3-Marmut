@@ -17,13 +17,19 @@
             </div>
             <div class="navbar">
                 <div class="navbtn-cont">
-                    <button class="navbtn">Chart</button>
+                    <a href="{% url 'fitur_biru:charts' %}">
+                        <button class="navbtn">Chart</button>
+                    </a>
                     <span class="separator">|</span>
                     <button class="navbtn">Kelola Playlist</button>
                     <span class="separator">|</span>
                     <button class="navbtn">Berlangganan</button>
                     <span class="separator">|</span>
                     <button class="navbtn">Kelola Podcast</button>
+                    <span class="separator">|</span>
+                    <a href="{% url 'fitur_biru:add-podcast' podster_email %}">
+                        <button class="navbtn">Buat Podcast</button>
+                    </a>
                 </div>
                 <div class="search-bar">
                     <input type="text" placeholder="cari">
@@ -40,42 +46,26 @@
                     <th class="content-header">Total Durasi</th>
                     <th class="content-header-r">Aksi</th>
                 </tr>
+                {% for pods in podcasts %}
                 <tr>
-                    <td class="tuple-l">Malam Jumat</td>
-                    <td class="tuple">14</td>
-                    <td class="tuple">1 jam 2 menit</td>
+                    <td class="tuple-l">{{pods.judul}}</td>
+                    <td class="tuple">{{pods.jumlah_episode}}</td>
+                    <td class="tuple">{{pods.durasi}}</td>
                     <td class="tuple-r">
                         <div class="btn-col">
-                            <button class="btn">Lihat</button>
-                            <button class="btn">Tambah Episode</button>
-                            <button class="btn">Hapus</button>
+                            <a href="{% url 'fitur_biru:show-episodes' pods.id_konten %}">
+                                <button class="btn">Lihat</button>
+                            </a>
+                            <a href="{% url 'fitur_biru:add-episode' pods.id_konten %}">
+                                <button class="btn">Tambah Episode</button>
+                            </a>
+                            <a href="{% url 'fitur_biru:delete-podcast' pods.id_konten %}">
+                                <button class="btn">Hapus</button>
+                            </a>
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <td class="tuple-l">Legenda Epic Abadi</td>
-                    <td class="tuple">3</td>
-                    <td class="tuple">57 menit</td>
-                    <td class="tuple-r">
-                        <div class="btn-col">
-                            <button class="btn">Lihat</button>
-                            <button class="btn">Tambah Episode</button>
-                            <button class="btn">Hapus</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="tuple-l">Permicinan</td>
-                    <td class="tuple">7</td>
-                    <td class="tuple">1 jam 52 menit</td>
-                    <td class="tuple-r">
-                        <div class="btn-col">
-                            <button class="btn">Lihat</button>
-                            <button class="btn">Tambah Episode</button>
-                            <button class="btn">Hapus</button>
-                        </div>
-                    </td>
-                </tr>
+                {% endfor %}
             </table>
         </div>
     </div>

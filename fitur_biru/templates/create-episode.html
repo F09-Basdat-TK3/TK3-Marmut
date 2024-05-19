@@ -15,7 +15,7 @@
       <div class="form-container">
         <div class="form-content">
           <h1 class="tittle">Buat Episode</h1>
-            <form method="POST" action="">
+            <form method="POST" action="{% url 'fitur_biru:create-episode' id_konten %}">
               {% csrf_token %}
               <h3>Judul:</h3>
               <div class="input-container">

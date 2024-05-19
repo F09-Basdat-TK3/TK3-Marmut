@@ -84,7 +84,7 @@ html {
 }
 
 .form-container {
-    position: relative;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -95,8 +95,8 @@ html {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
     background-color: #d9d9d93b;
-    width: 700px;
-    height: 500px;
+    width: 617px;
+    height: 400px;
     mix-blend-mode: lighten;
 }
 
@@ -105,6 +105,7 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .input-container {
@@ -157,18 +158,6 @@ html {
     width: 150px;
     height: 50px;
     background-color: #f4f4f7b4;
-}
-
-.desktop-1 {
-    width: 100%;
-    position: relative;
-    background-color: #fff;
-    height: 1080px;
-    overflow: hidden;
-    text-align: center;
-    font-size: var(--font-size-3xl);
-    color: var(--color-gray);
-    font-family: var(--font-phetsarath);
 }
 
 h3 {

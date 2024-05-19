@@ -1,0 +1,58 @@
+<!DOCTYPE html> {% load static %}
+<link rel="stylesheet" href="{% static 'css/podcast-list.css'%}">
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&display=swap" />
+</head>
+
+<body>
+    <div class="desktop-1">
+        <img class="bgr" alt="" src="{% static 'images/Background.jpg'%}" />
+        <div class="header">
+            <div class="header-container">
+                <h1 class="tittle">Podcast</h1>
+            </div>
+            <div class="navbar">
+                <div class="navbtn-cont">
+                    <a href="{% url 'fitur_biru:charts' %}">
+                        <button class="navbtn">Chart</button>
+                    </a>
+                    <span class="separator">|</span>
+                    <button class="navbtn">Kelola Playlist</button>
+                    <span class="separator">|</span>
+                    <button class="navbtn">Berlangganan</button>
+                    <span class="separator">|</span>
+                    <button class="navbtn">Kelola Podcast</button>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="cari">
+                    <button>Cari</button>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <h2 class="eps">Daftar Podcaster</h2>
+            <table class="content-table">
+                <tr>
+                    <th class="content-header-l">Podcaster</th>
+                    <th class="content-header-r">Aksi</th>
+                </tr>
+                {% for podster in podcasters %}
+                <tr>
+                    <td class="tuple-l">{{podster.nama}}</td>
+                    <td class="tuple-r">
+                        <a href="{% url 'fitur_biru:show-podcasts' podster.email %}">
+                            <button class="btn">Lihat</button>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

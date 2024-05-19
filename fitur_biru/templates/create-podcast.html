@@ -15,50 +15,32 @@
       <div class="form-container">
         <div class="form-content">
           <h1 class="tittle">Buat Podcast</h1>
-            <form method="POST" action="">
+            <form method="POST" action="{% url 'fitur_biru:create-podcast' podster_email %}">
               {% csrf_token %}
               <h3>Judul:</h3>
               <div class="input-container">
                 <input class="input-field" type="text" placeholder="Judul" name="title">
               </div>
               <h3>Genre:</h3>
-              <div class="multiselect">
-                <div class="selectBox" onclick="showCheckboxes()">
-                  <select>
-                    <option>Pilih Opsi</option>
-                  </select>
-                  <div class="overSelect"></div>
-                </div>
-                <div id="checkboxes">
-                  <label for="one">
-                    <input type="checkbox" id="one">Horor</label>
-                  <label for="two">
-                    <input type="checkbox" id="two">Misteri</label>
-                  <label for="three">
-                    <input type="checkbox" id="three">Romansa</label>
-                </div>
-              </div>
-              <h3>Durasi:</h3>
-              <div class="input-container">
-                <input class="input-field" type="text" placeholder="Durasi" name="duration">
+              <div>
+                <select multiple 
+                  multiselect-search="true" 
+                  multiselect-select-all="false" 
+                  multiselect-max-items="4"
+                  multiselect-hide-x = "false"
+                  name="multval"
+                  size="40"
+                >
+                {% for g in genres %}
+                  <option value={{g.genre}}>{{g.genre}}</option>
+                {% endfor %}
+                </select>
               </div>
               <input class="button" type="submit" value="Buat">
             </form>
         </div>
       </div>
     </div>
-    <script>
-      var expanded = false;
-      function showCheckboxes() {
-        var checkboxes = document.getElementById("checkboxes");
-        if (!expanded) {
-          checkboxes.style.display = "block";
-          expanded = true;
-        } else {
-          checkboxes.style.display = "none";
-          expanded = false;
-        }
-      }
-    </script>
+    <script src="{% static 'js/multiselect-dropdown.js' %}"></script>
   </body>
 </html>

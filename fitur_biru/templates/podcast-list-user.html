@@ -1,0 +1,60 @@
+<!DOCTYPE html> {% load static %}
+<link rel="stylesheet" href="{% static 'css/podcast-list.css'%}">
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&display=swap" />
+</head>
+
+<body>
+    <div class="desktop-1">
+        <img class="bgr" alt="" src="{% static 'images/Background.jpg'%}" />
+        <div class="header">
+            <div class="header-container">
+                <h1 class="tittle">Podcast</h1>
+            </div>
+            <div class="navbar">
+                <div class="navbtn-cont">
+                    <a href="{% url 'fitur_biru:charts' %}">
+                        <button class="navbtn">Chart</button>
+                    </a>
+                    <span class="separator">|</span>
+                    <button class="navbtn">Kelola Playlist</button>
+                    <span class="separator">|</span>
+                    <button class="navbtn">Berlangganan</button>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="cari">
+                    <button>Cari</button>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <h2 class="eps">Daftar Podcast</h2>
+            <table class="content-table">
+                <tr>
+                    <th class="content-header-l">Judul</th>
+                    <th class="content-header">Jumlah Episode</th>
+                    <th class="content-header">Total Durasi</th>
+                    <th class="content-header-r">Aksi</th>
+                </tr>
+                {% for pods in podcasts %}
+                <tr>
+                    <td class="tuple-l">{{pods.judul}}</td>
+                    <td class="tuple">{{pods.jumlah_episode}}</td>
+                    <td class="tuple">{{pods.durasi}}</td>
+                    <td class="tuple-r">
+                        <a href="{% url 'fitur_biru:show-episodes' pods.id_konten %}">
+                            <button class="btn">Lihat</button>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
