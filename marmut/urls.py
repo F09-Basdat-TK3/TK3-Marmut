@@ -21,6 +21,8 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('fitur-hijau/', include('fitur_hijau.urls')),
-    path('Malset/', include('fitur_biru.urls'))
+    path('Malset/', include('fitur_biru.urls')),
     path('Syifa/', include('fitur_pink.urls')),
+    path('auth/', include('authentication.urls')),
+    path('dashboard/', include('dashboard.urls')),
 ]
