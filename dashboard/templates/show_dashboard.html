@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel = "stylesheet"
+    href = "https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One">
+    <link rel = "stylesheet"
+    href = "https://fonts.googleapis.com/css2?family=Darumadrop+One">
+  
+
+    <style>
+        body {
+            font-family: 'Mochiy Pop P One', sans-serif;
+            color: #724E2B;
+            margin: 0;
+            padding: 0;
+            background-color: #edb047;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        header nav ul li a {
+            color: #724E2B;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        header nav ul li a:hover {
+            color: #FEFADD;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 20px;
+            border: 6px solid #724E2B;
+            background: #FEFADD;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: 'Darumadrop One', sans-serif;
+            color: #724E2B;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #724E2B;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            border: 4px solid #724E2B;
+        }
+
+        .btn {
+            font-family: 'Mochiy Pop P One', sans-serif;
+            border-radius: 10px;
+            border: 4px solid #724E2B;
+            padding: 10px 20px;
+            color: #724E2B;
+            background: #FEFADD;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            color: #FEFADD;
+            background: #724E2B;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .overview {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background: #FEFADD;
+            border: 4px solid #724E2B;
+            border-radius: 10px;
+            padding: 20px;
+            width: calc(33.333% - 20px);
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .details {
+            margin-top: 30px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #724E2B;
+            color: #FEFADD;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'dashboard:show_dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'authentication:logout_user' %}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="overview">
+            <h1>Welcome to the Dashboard</h1>
+            <p>Hello, {{ name }}!</p>
+            <p>Email: {{ email }}</p>
+            {% if role %}
+                <p>Role: {{ role }}</p>
+            {% endif %}
+            {% if kontak %}
+                <p>Kontak: {{ kontak }}</p>
+            {% endif %}
+            {% if kota_asal %}
+                <p>Kota Asal: {{ kota_asal }}</p>
+            {% endif %}
+            {% if gender %}
+                <p>Gender: {{ gender }}</p>
+            {% endif %}
+            {% if tempat_lahir %}
+                <p>Tempat Lahir: {{ tempat_lahir }}</p>
+            {% endif %}
+            {% if tanggal_lahir %}
+                <p>Tanggal Lahir: {{ tanggal_lahir }}</p>
+            {% endif %}
+        </section>
+        
+        <section class="details">
+            <h2>Details</h2>
+            {% if playlists %}
+                <h3>Playlists</h3>
+                <ul>
+                    {% for playlist in playlists %}
+                        <li>{{ playlist }}</li>
+                    {% endfor %}
+                </ul>
+            {% elif songs %}
+                <h3>Songs</h3>
+                <ul>
+                    {% for song in songs %}
+                        <li>{{ song }}</li>
+                    {% endfor %}
+                </ul>
+            {% elif podcasts %}
+                <h3>Podcasts</h3>
+                <ul>
+                    {% for podcast in podcasts %}
+                        <li>{{ podcast }}</li>
+                    {% endfor %}
+                </ul>
+            {% elif albums %}
+                <h3>Albums</h3>
+                <ul>
+                    {% for album in albums %}
+                        <li>{{ album }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No details available.</p>
+            {% endif %}
+        </section>
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 miau</p>
+    </footer>
+</body>
+</html>

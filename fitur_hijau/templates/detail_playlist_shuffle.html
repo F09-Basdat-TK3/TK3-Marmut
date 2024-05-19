@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Playlist Detail</title>
-    <link rel = "stylesheet"
-    href = "https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One">
-    <link rel = "stylesheet"
-    href = "https://fonts.googleapis.com/css2?family=Darumadrop+One">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Darumadrop+One">
     <style>
         body {
             font-family: 'Mochiy Pop P One';
@@ -36,14 +33,14 @@
             margin-bottom: 20px;
         }
         .details {
-            text-align: left; 
-            width: 100%; 
-            margin-bottom: 20px; 
+            text-align: left;
+            width: 100%;
+            margin-bottom: 20px;
         }
         p {
             color: #724E2B;
             font-size: 18px;
-            margin: 0; 
+            margin: 0;
         }
         .btn {
             border-radius: 10px;
@@ -78,15 +75,15 @@
     <div class="container">
         <h1>User Playlist Detail</h1>
         <div class="details">
-            <p>Judul: Miau</p>
-            <p>Pembuat: Mimi</p>
-            <p>Jumlah Lagu: 5</p>
-            <p>Total Durasi: 5 menit</p>
-            <p>Tanggal Dibuat: 18/03/24</p>
-            <p>Deskripsi: Aku suka kucing</p>
+            <p>Judul: {{ playlist.judul }}</p>
+            <p>Pembuat: {{ playlist.pembuat }}</p>
+            <p>Jumlah Lagu: {{ playlist.jumlah_lagu }}</p>
+            <p>Total Durasi: {{ playlist.total_durasi }} menit</p>
+            <p>Tanggal Dibuat: {{ playlist.tanggal_dibuat }}</p>
+            <p>Deskripsi: {{ playlist.deskripsi }}</p>
         </div>
-        <a href="#" class="btn">Shuffle Play</a>
-        <a href="#" class="btn">Kembali</a>
+        <a href="{% url 'shuffle_play' playlist.id_playlist %}" class="btn">Shuffle Play</a>
+        <a href="{% url 'show_playlists' %}" class="btn">Kembali</a>
         
         <h2>DAFTAR LAGU</h2>
         <table>
@@ -99,27 +96,21 @@
                 </tr>
             </thead>
             <tbody>
+                {% for song in songs %}
                 <tr>
-                    <td>Wahahoo!</td>
-                    <td>Nyam</td>
-                    <td>2 menit</td>
+                    <td>{{ song.judul_lagu }}</td>
+                    <td>{{ song.oleh }}</td>
+                    <td>{{ song.durasi }}</td>
                     <td>
-                        <a href="#">Lihat</a> |
-                        <a href="#">Play</a> |
+                        <a href="{% url 'detail_song' song.id_song %}">Lihat</a> |
+                        <a href="{% url 'play_song' song.id_song %}">Play</a> |
+                        <a href="{% url 'delete_song' playlist.id_playlist song.id_song %}">Hapus</a>
                     </td>
                 </tr>
-                <tr>
-                    <td>Dubidubidu</td>
-                    <td>Bingus</td>
-                    <td>3 menit</td>
-                    <td>
-                        <a href="#">Lihat</a> |
-                        <a href="#">Play</a> |
-                    </td>
-                </tr>
+                {% endfor %}
             </tbody>
         </table>
-        <a href="tambah_lagu.html" class="btn">Tambah Lagu</a>
+        <a href="{% url 'tambah_lagu' playlist.id_playlist %}" class="btn">Tambah Lagu</a>
     </div>
 </body>
 </html>
