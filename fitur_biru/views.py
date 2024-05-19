@@ -52,7 +52,7 @@ def create_podcast(request, email_podcaster):
     return show_podcasts(request, email_podcaster)
 
 def delete_podcast(request, id_konten):
-    podster_email = get_podster_email_by_id_konten(id_konten)
+    podster_email = query(f"SELECT email_podcaster FROM PODCAST WHERE id_konten = '{id_konten}'")[0]["email_podcaster"]
     query(f"DELETE FROM PODCAST WHERE id_konten = '{id_konten}'")
     return show_podcasts(request, podster_email)
 
@@ -95,6 +95,3 @@ def show_chart_content(request, tipe):
     else: range = "Tahun"
     context = {'tipe': range, 'songs': songs}
     return render(request, "chart-content.html", context)
-
-def get_podster_email_by_id_konten(id_konten):
-    return query(f"SELECT email_podcaster FROM PODCAST WHERE id_konten = '{id_konten}'")[0]["email_podcaster"]
