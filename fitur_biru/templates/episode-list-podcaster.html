@@ -48,7 +48,12 @@
                     <td class="tuple">{{e.deskripsi}}</td>
                     <td class="tuple">{{e.durasi}}</td>
                     <td class="tuple">{{e.tanggal_rilis}}</td>
-                    <td class="tuple-r"><button class="play">Hapus</button></td>
+                    <td class="tuple-r">
+                        <a href="{% url 'fitur_biru:delete-episode' e.id_episode %}">
+                            <button class="play">Hapus</button>
+                        </a>
+
+                    </td>
                 </tr>
                 {% endfor %}
             </table>

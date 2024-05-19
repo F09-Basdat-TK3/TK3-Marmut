@@ -34,11 +34,22 @@ def show_episodes(request, id_konten):
                        SELECT K.judul FROM KONTEN K
                        JOIN PODCAST P ON K.id = P.id_konten
                        WHERE P.id_konten = '{id_konten}'
-                       """)
+                       """)[0]["judul"]
     eps = query(f"SELECT * FROM EPISODE WHERE id_konten_podcast = '{id_konten}'")
-    context = {'pod_title': pod_title[0]["judul"], 'eps': eps}
-    return render(request, "episode-list-user.html", context)
+    context = {'pod_title': pod_title, 'eps': eps}
+    return render(request, "episode-list-podcaster.html", context)
 
+@csrf_exempt
+def create_episode(request, id_konten):
+    if request.method == 'POST':
+        judul = request.POST.get("title")
+        deskripsi = request.POST.get("description")
+        durasi = request.POST.get("duration")
+        query(f"")
+        return HttpResponseRedirect(reverse('fitur_biru:show-episodes', args=[id_konten]))
+    return render("fitur_biru:podcast-list-podcaster.html")
+
+@csrf_exempt
 def create_podcast(request):
     if request.method == 'POST':
         judul = request.POST.get("judul")
@@ -57,20 +68,21 @@ def add_episode(request, id_konten):
     context = {'id_konten': id_konten}
     return render(request, "create-episode.html", context)
 
-def create_episode(request):
+@csrf_exempt
+def create_episode(request, id_konten):
     if request.method == 'POST':
-        id_podcast = request.POST.get("id_konten_podcast")
-        judul = request.POST.get("judul")
-        deskripsi = request.POST.get("deskripsi")
-        durasi = request.POST.get("durasi")
-        query(f"INSERT INTO EPISODE VALUE ({str(uuid.uuid4())},{id_podcast},{judul},{deskripsi},{durasi},{datetime.now().date()})")
-    return render("episode-list.html")
+        judul = request.POST.get("title")
+        deskripsi = request.POST.get("description")
+        durasi = request.POST.get("duration")
+        query(f"INSERT INTO EPISODE VALUES ('{str(uuid.uuid4())}','{id_konten}','{judul}','{deskripsi}','{durasi}','{datetime.now().date()}')")
+        return HttpResponseRedirect(reverse('fitur_biru:show-episodes', args=[id_konten]))
+    return render("fitur_biru:podcast-list-podcaster.html")
 
-def delete_episode(request):
-    if request.method == 'POST':
-        id_episode = request.POST.get("id_episode")
-        query(f"DELETE FROM EPISODE WHERE id_episode = '{id_episode}'")
-    return render("episode-list.html")
+def delete_episode(request, id_episode):
+    id_konten = query(f"SELECT id_konten_podcast FROM EPISODE WHERE id_episode = '{id_episode}'")[0]["id_konten_podcast"]
+    print(id_konten)
+    query(f"DELETE FROM EPISODE WHERE id_episode = '{id_episode}'")
+    return show_episodes(request, id_konten)
 
 def get_chart(request, tipe):
     chart = query(f"SELECT * FROM CHART WHERE tipe = {tipe}")[0]

@@ -8,4 +8,6 @@ urlpatterns = [
     path('show-podcasts/<str:podcaster_email>', show_podcasts, name="show-podcasts"),
     path('show-episodes/<str:id_konten>', show_episodes, name='show-episodes'),
     path('add-episode/<str:id_konten>', add_episode, name='add-episode'),
+    path('create-episode/<str:id_konten>', create_episode, name='create-episode'),
+    path('delete-episode/<str:id_episode>', delete_episode, name='delete-episode'),
 ]
