@@ -21,6 +21,7 @@ def map_cursor(cursor):
     return [dict(row) for row in cursor.fetchall()]
 
 def query(query_str: str):
+    print(query_str)
     hasil = []
     with connection.cursor(cursor_factory=RealDictCursor) as cursor:
         cursor.execute("SET search_path to MARMUT")
@@ -33,6 +34,7 @@ def query(query_str: str):
                 connection.commit()
         except Exception as e:
             hasil = e
+    print(hasil)
     return hasil
 
 def connectdb(func):

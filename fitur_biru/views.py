@@ -12,26 +12,32 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 import uuid
 
-def show_podcast(request):
-    return render(request, "chart-detail.html", {})
+def show_podcaster(request):
+    podster = query("SELECT A.nama, A.email FROM AKUN A JOIN PODCASTER PR ON A.email = PR.email")
+    context = {'podcasters': podster}
+    return render(request, "podcaster-list.html", context)
 
-def get_podcasts_by_user(request, podcaster_email):
-    podster = query(f"SELECT * FROM PODCAST WHERE email = ")
-    pod = query(f"SELECT * FROM PODCAST WHERE email_podcaster = '{podcaster_email}'")
-    
+def show_podcasts(request, podcaster_email):
+    pods = query(f"""
+                  SELECT K.judul, K.durasi, COUNT(E.id_episode) AS jumlah_episode
+                  FROM KONTEN K
+                  JOIN PODCAST P ON K.id = P.id_konten
+                  JOIN EPISODE E ON P.id_konten = E.id_konten_podcast
+                  WHERE P.email_podcaster = '{podcaster_email}'
+                  GROUP BY K.judul, K.durasi
+                  """)
+    context = {'podcasts': pods}
+    return render(request, "podcast-list-user.html", {context})
 
-def get_podcast_by_id(request, id_konten):
-    pod = query(f"SELECT * FROM PODCAST WHERE id_konten = '{id_konten}'")
-    eps = get_episodes()
-    context = {
-        'podcast': pod,
-        'eps': eps
-    }
+def show_episodes(request, id_konten):
+    pod_tittle = query(f"""
+                        SELECT K.judul FROM KONTEN K
+                        JOIN PODCAST P ON K.id = P.id_konten
+                        WHERE P.id_konten = '{id_konten}'
+                        """)
+    eps = query(f"SELECT * FROM EPISODE WHERE id_konten_podcast = '{id_konten}'")
+    context = {'pod-tittle': pod_tittle, 'eps': eps}
     return render(request, "podcast.html", context)
-
-def get_episodes(id_konten):
-    eps = query(f"SELECT * FROM episode WHERE id_konten_podcast = '{id_konten}'")
-    return eps
 
 def create_podcast(request):
     if request.method == 'POST':

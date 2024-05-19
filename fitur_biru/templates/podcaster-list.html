@@ -32,50 +32,22 @@
             </div>
         </div>
         <div class="content">
-            <h2 class="eps">Daftar Podcast</h2>
+            <h2 class="eps">Daftar Podcaster</h2>
             <table class="content-table">
                 <tr>
-                    <th class="content-header-l">Judul</th>
-                    <th class="content-header">Jumlah Episode</th>
-                    <th class="content-header">Total Durasi</th>
+                    <th class="content-header-l">Podcaster</th>
                     <th class="content-header-r">Aksi</th>
                 </tr>
+                {% for podster in podcasters %}
                 <tr>
-                    <td class="tuple-l">Malam Jumat</td>
-                    <td class="tuple">14</td>
-                    <td class="tuple">1 jam 2 menit</td>
+                    <td class="tuple-l">{{podster.nama}}</td>
                     <td class="tuple-r">
-                        <div class="btn-col">
+                        <a href="{% url 'fitur_biru:show-podcasts' podster.email %}">
                             <button class="btn">Lihat</button>
-                            <button class="btn">Tambah Episode</button>
-                            <button class="btn">Hapus</button>
-                        </div>
+                        </a>
                     </td>
                 </tr>
-                <tr>
-                    <td class="tuple-l">Legenda Epic Abadi</td>
-                    <td class="tuple">3</td>
-                    <td class="tuple">57 menit</td>
-                    <td class="tuple-r">
-                        <div class="btn-col">
-                            <button class="btn">Lihat</button>
-                            <button class="btn">Tambah Episode</button>
-                            <button class="btn">Hapus</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="tuple-l">Permicinan</td>
-                    <td class="tuple">7</td>
-                    <td class="tuple">1 jam 52 menit</td>
-                    <td class="tuple-r">
-                        <div class="btn-col">
-                            <button class="btn">Lihat</button>
-                            <button class="btn">Tambah Episode</button>
-                            <button class="btn">Hapus</button>
-                        </div>
-                    </td>
-                </tr>
+                {% endfor %}
             </table>
         </div>
     </div>
