@@ -24,6 +24,10 @@
                     <button class="navbtn">Berlangganan</button>
                     <span class="separator">|</span>
                     <button class="navbtn">Kelola Podcast</button>
+                    <span class="separator">|</span>
+                    <a>
+                        <button class="navbtn">Buat Podcast</button>
+                    </a>
                 </div>
                 <div class="search-bar">
                     <input type="text" placeholder="cari">
@@ -53,7 +57,9 @@
                             <a href="{% url 'fitur_biru:add-episode' pods.id_konten %}">
                                 <button class="btn">Tambah Episode</button>
                             </a>
-                            <button class="btn">Hapus</button>
+                            <a href="{% url 'fitur_biru:delete-podcast' pods.id_konten %}">
+                                <button class="btn">Hapus</button>
+                            </a>
                         </div>
                     </td>
                 </tr>

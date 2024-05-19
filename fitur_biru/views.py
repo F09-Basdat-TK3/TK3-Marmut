@@ -49,20 +49,22 @@ def create_episode(request, id_konten):
         return HttpResponseRedirect(reverse('fitur_biru:show-episodes', args=[id_konten]))
     return render("fitur_biru:podcast-list-podcaster.html")
 
+def add_podcast(request, podster_email):
+    context = {'podster_email': podster_email}
+    return render(request, "create-podcast.html", context)
+
 @csrf_exempt
-def create_podcast(request):
+def create_podcast(request, id_konten):
     if request.method == 'POST':
         judul = request.POST.get("judul")
         genre = request.POST.get("genre")
-        query(f"INSERT INTO PODCAST VALUE ({judul},{genre})")
-        return render(request, "podcast-list.html")
-    else: return render(request, "create-podcast.html")
+        query(f"INSERT INTO KONTEN VALUES ('{str(uuid.uuid4())}','{judul}','{datetime.now().date()}','{datetime.now().year}','0')")
+    return show_podcasts(request, get_podster_email_by_id_konten(id_konten))
 
-def delete_podcast(request):
-    if request.method == 'POST':
-        id_konten = request.POST.get("id_konten")
-        query(f"DELETE FROM PODCAST WHERE id_konten = '{id_konten}'")
-    else: return render(request, "podcast-list.html")
+def delete_podcast(request, id_konten):
+    podster_email = get_podster_email_by_id_konten(id_konten)
+    query(f"DELETE FROM PODCAST WHERE id_konten = '{id_konten}'")
+    return show_podcasts(request, podster_email)
 
 def add_episode(request, id_konten):
     context = {'id_konten': id_konten}
@@ -80,10 +82,12 @@ def create_episode(request, id_konten):
 
 def delete_episode(request, id_episode):
     id_konten = query(f"SELECT id_konten_podcast FROM EPISODE WHERE id_episode = '{id_episode}'")[0]["id_konten_podcast"]
-    print(id_konten)
     query(f"DELETE FROM EPISODE WHERE id_episode = '{id_episode}'")
     return show_episodes(request, id_konten)
 
 def get_chart(request, tipe):
     chart = query(f"SELECT * FROM CHART WHERE tipe = {tipe}")[0]
     id_playlist = chart["id_playlist"]
+
+def get_podster_email_by_id_konten(id_konten):
+    return query(f"SELECT email_podcaster FROM PODCAST WHERE id_konten = '{id_konten}'")[0]["email_podcaster"]
