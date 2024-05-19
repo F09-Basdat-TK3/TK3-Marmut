@@ -20,9 +20,6 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('Malset', include('fitur_biru.urls')),
+    path('Malset/', include('fitur_biru.urls')),
     path('Syifa/', include('fitur_pink.urls')),
 ]
-
-
-
