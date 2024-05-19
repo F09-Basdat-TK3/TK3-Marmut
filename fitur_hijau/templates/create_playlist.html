@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Playlist</title>
+
+    <link rel = "stylesheet"
+    href = "https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One">
+    <link rel = "stylesheet"
+    href = "https://fonts.googleapis.com/css2?family=Darumadrop+One">
+    
+    <style>
+        body {
+            font-family: 'Mochiy Pop P One';
+            color: #724E2B;
+            margin: 0;
+            padding: 0;
+            background-color: #edb047;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 20px;
+            border: 6px solid #724E2B;
+            background: #FEFADD;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 5px;
+            align-items: center;
+        }
+        h1 {
+            font-family: 'Darumadrop One';
+            color: #724E2B;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #724E2B;
+            text-align: center;
+            font-size: 18px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            border: 4px solid #724E2B;
+        }
+        .btn {
+            font-family: 'Mochiy Pop P One';
+            border-radius: 10px;
+            border: 4px solid #724E2B;
+            padding: 5px;
+            color: #724E2B;
+            background: #FEFADD;
+        }
+        .btn:hover {
+            color: #FEFADD;
+            background: #724E2B;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tambah Playlist</h1>
+        <form action="user_playlist.html" method="POST">
+            {% csrf_token %}
+            <label for="judul">Judul:</label>
+            <input type="text" id="judul" name="judul" required>
+            <label for="deskripsi">Deskripsi:</label>
+            <textarea id="deskripsi" name="deskripsi" rows="4" required></textarea>
+            <input type="submit" value="Submit" class="btn">
+        </form>
+    </div>
+</body>
+</html>

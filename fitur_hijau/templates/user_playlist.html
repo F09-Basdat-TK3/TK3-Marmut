@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Playlist</title>
+    <link rel = "stylesheet"
+    href = "https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One">
+    <link rel = "stylesheet"
+    href = "https://fonts.googleapis.com/css2?family=Darumadrop+One">
+    <style>
+        body {
+            font-family: 'Mochiy Pop P One';
+            color: #724E2B;
+            margin: 0;
+            padding: 0;
+            background-color: #edb047;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 20px;
+            border: 6px solid #724E2B;
+            background: #FEFADD;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-family: 'Darumadrop One';
+            color: #724E2B;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #724E2B;
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 4px solid #724E2B;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #d8b46b;
+            font-weight: bold;
+        }
+        .btn {
+            border-radius: 10px;
+            border: 4px solid #724E2B;
+            padding: 5px;
+            color: #724E2B;
+            background: #FEFADD;
+        }
+        .btn:hover {
+            color: #FEFADD;
+            background: #724E2B;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Playlist</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Judul</th>
+                    <th>Jumlah Lagu</th>
+                    <th>Total Durasi</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Miau</td>
+                    <td>5</td>
+                    <td>5 menit</td>
+                    <td>
+                        <a href="detail_playlist.html">Detail</a> |
+                        <a href="#">Ubah</a> |
+                        <a href="#">Hapus</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gukguk</td>
+                    <td>2</td>
+                    <td>4 menit</td>
+                    <td>
+                        <a href="detail_playlist.html">Detail</a> |
+                        <a href="#">Ubah</a> |
+                        <a href="#">Hapus</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="create_playlist.html" class="btn">Tambah Playlist</a>
+    </div>
+</body>
+</html>
