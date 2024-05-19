@@ -17,10 +17,18 @@
         <div class="form-content">
           <h1 class="title">Chart</h1>
           <h3 class="subtitle">Dengarkan 20 Lagu Paling Nge-<i>top</i>!</h3>
-          <button class="button">Harian</button>
-          <button class="button">Mingguan</button>
-          <button class="button">Bulanan</button>
-          <button class="button">Tahunan</button>
+          <a href="{% url 'fitur_biru:chart-content' 'Daily' %}">
+            <button class="button">Harian</button>
+          </a>
+          <a href="{% url 'fitur_biru:chart-content' 'Weekly' %}">
+            <button class="button">Mingguan</button>
+          </a>
+          <a href="{% url 'fitur_biru:chart-content' 'Monthly' %}">
+            <button class="button">Bulanan</button>
+          </a>
+          <a href="{% url 'fitur_biru:chart-content' 'Yearly' %}">
+            <button class="button">Tahunan</button>
+          </a>
         </div>
       </div>
     </div>

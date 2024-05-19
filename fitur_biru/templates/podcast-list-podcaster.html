@@ -17,7 +17,9 @@
             </div>
             <div class="navbar">
                 <div class="navbtn-cont">
-                    <button class="navbtn">Chart</button>
+                    <a href="{% url 'fitur_biru:charts' %}">
+                        <button class="navbtn">Chart</button>
+                    </a>
                     <span class="separator">|</span>
                     <button class="navbtn">Kelola Playlist</button>
                     <span class="separator">|</span>
@@ -25,7 +27,7 @@
                     <span class="separator">|</span>
                     <button class="navbtn">Kelola Podcast</button>
                     <span class="separator">|</span>
-                    <a>
+                    <a href="{% url 'fitur_biru:add-podcast' podster_email %}">
                         <button class="navbtn">Buat Podcast</button>
                     </a>
                 </div>

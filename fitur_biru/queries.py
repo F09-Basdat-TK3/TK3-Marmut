@@ -22,7 +22,7 @@ def map_cursor(cursor):
 
 def query(query_str: str):
     hasil = []
-    print("\n" + "="*20 + "QUERY" + "="*20)
+    print("="*20 + "QUERY" + "="*20)
     print(query_str)
     with connection.cursor(cursor_factory=RealDictCursor) as cursor:
         cursor.execute("SET search_path to MARMUT")
@@ -35,7 +35,7 @@ def query(query_str: str):
                 connection.commit()
         except Exception as e:
             hasil = e
-    print("\n" + "="*20 + "RESULT" + "="*20)
+    print("="*20 + "RESULT" + "="*20)
     print(hasil)
     return hasil
 
