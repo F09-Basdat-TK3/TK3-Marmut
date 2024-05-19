@@ -24,6 +24,3 @@ urlpatterns = [
     path('Malset/', include('fitur_biru.urls'))
     path('Syifa/', include('fitur_pink.urls')),
 ]
-
-
-
